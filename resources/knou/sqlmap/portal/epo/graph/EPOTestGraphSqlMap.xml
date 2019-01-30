@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EPOTestGraphDAO">
+	
+	<typeAlias alias="ePOTestGraphVO" type="knou.portal.epo.graph.vo.EPOTestGraphVO"/>
+	<resultMap id="ePOTestGraphPiChartListMap" class="ePOTestGraphVO">
+		<result property="chartType" column="chartType"/>
+		<result property="param1" column="param1"/>
+		<result property="param2" column="param2"/>
+		<result property="param3" column="param3"/>
+		<result property="param4" column="param4"/>
+		<result property="param5" column="param5"/>
+	</resultMap>
+	
+	<select id="EPOTestGraphDAO.selectPiChartList" resultMap="ePOTestGraphPiChartListMap" parameterClass="ePOTestGraphVO">
+		select 'pi' as chartType
+			,3.81 as param1
+			,4.26 as param2
+			,4.30 as param3
+			,4.18 as param4
+			,4.29 as param5
+		from dual
+	</select>
+	
+</sqlMap>
